@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <button v-on:click="add(10)">Add 10</button>
+      <button v-on:click="reduce(5)">Subtract 5</button>
+      <p>Result: {{ counter }}</p>
+<!--      The v-model directive is example of two-way binding (i.e. v-bind:value and v-on:input)-->
+      <input type="text" v-model="name">
+      <input type="text" v-model="lastName">
+      <button v-on:click="resetInput">Reset Input</button>
+      <p>Your Name: {{ name }}</p>
+<!--      Below method gets executed everytime something on the page changes, (e.g. Counter Add or Subtract) due to defined-->
+<!--      as a method. Which is not the greatest performance for the page.-->
+<!--      <p>Your Name: {{ outputFullName() }}</p>-->
+      <h3>Output using Computed method with hardcoded "last name"</h3>
+      <p>Your Name: {{ fullname }}</p>
+      <h3>Example using Watcher methods.</h3>
+      <p>Your Full Name: {{ fullNameWatched }}</p>
+      <h3>Alternative of 2 Watcher methods using a single Computed Method</h3>
+      <p>Your Name: {{ fullNameTwoDependencies }}</p>
+    </section>
+  </body>
+</html>
